@@ -20,6 +20,23 @@ tr:nth-child(even) {
     background-color: coral;
 }
 
-.material-icons{
-  font-size: large;
+.material-icons {
+  font-size: 35px !important;
+}
+
+.coloranzeige {
+    height: 20px;
+    width: 100px;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
 }
