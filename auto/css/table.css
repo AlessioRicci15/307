@@ -1,6 +1,9 @@
 table {
-    margin: 15px;
-    width: 95%;
+    width: 100%;
+}
+
+div table {
+    padding: 15px;
 }
 
 th, td {

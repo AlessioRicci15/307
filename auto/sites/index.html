@@ -5,7 +5,7 @@
     <meta name="publisher" content="Alessio Ricci">
     <meta name="copyright" content="Alessio Ricci">
     <meta name="description" content="Das ist eine Webseite, welche gestaltet wurde für den Unterricht im ICT Modul 307.">
-    <meta name="keywords" content="ICT, Modul, 307, Interaktive, Webseite, mit, Formular, erstellen">
+    <meta name="keywords" content="ICT, Modul, 307, Interaktive, Webseite, mit, Formular, erstellen, Auto">
     <meta name="page-topic" content="Bildung">
     <meta name="page-type" content="Private Homepage">
     <meta name="audience" content="Alle"><meta http-equiv="content-language" content="de">
@@ -13,23 +13,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/auto/css/header.css">
-    <link rel="stylesheet" href="/auto/css/footer.css">
-    <link rel="stylesheet" href="/auto/css/body.css">
-    <link rel="stylesheet" href="/auto/css/table.css">
+    <link rel="stylesheet" type="text/css" href="/auto/css/css.php">
     <script language="javascript" type="text/javascript" src="/auto/js/index.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
-        <i class="large material-icons">directions_car</i> Auto
+        <i class="large material-icons ">directions_car</i> Auto
         <il id="nav-mobile" class="right hide-on-med-and-down" style="list-style: none; float: right;">
-            <li><i class="material-icons black">brightness_1</i><a class="black" href="https://materializecss.com/">MATERIALIZE CSS</a> <i class="material-icons blue">brightness_1</i><a class="blue" href="https://geeklabs.com">GEEKLAPS</a> <i class="material-icons red">brightness_1</i><a class="red" href="https://ict-berufsbildung.info/">MOODLE</a></li>
+            <li><a class="black" href="https://materializecss.com/"><i class="material-icons black">brightness_1</i>MATERIALIZE CSS</a> <a class="blue" href="https://geeklabs.com"><i class="material-icons blue">brightness_1</i>GEEKLAPS</a> <a class="red" href="https://ict-berufsbildung.info/"><i class="material-icons red">brightness_1</i>MOODLE</a></li>
         </il>
     </header>
-    <div>
-        <a class="btn-floating btn-large waves-effect waves-light red" style="float: right;"><i class="material-icons">add_circle</i></a>
+    <div onclick="MeineFunktion('Plus');">
+        <a class="btn-floating btn-large waves-effect waves-light red btn" style="float: right;"><i class="material-icons">add_circle</i></a>
     </div>
     <div>
       <table class="striped">
