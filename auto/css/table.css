@@ -1,0 +1,25 @@
+table {
+    margin: 15px;
+    width: 95%;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+th {
+    background-color: tomato;
+}
+
+tr {
+    background-color: lightcoral;
+}
+
+tr:nth-child(even) {
+    background-color: coral;
+}
+
+.material-icons{
+  font-size: large;
+}
