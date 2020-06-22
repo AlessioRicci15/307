@@ -14,23 +14,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/auto/css/css.php">
     <script language="javascript" type="text/javascript" src="/auto/js/index.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/auto/css/css.php">
 </head>
 <body>
     <header>
-        <i class="material-icons ">directions_car</i> Auto
-        <il id="nav-mobile" class="right hide-on-med-and-down" style="list-style: none; float: right;">
+        <i class="large material-icons ">directions_car</i> Auto
+        <il style="list-style: none; float: right;">
             <li><a class="black" href="https://materializecss.com/"><i class="material-icons black">brightness_1</i>MATERIALIZE CSS</a> <a class="blue" href="https://geeklabs.com"><i class="material-icons blue">brightness_1</i>GEEKLAPS</a> <a class="red" href="https://ict-berufsbildung.info/"><i class="material-icons red">brightness_1</i>MOODLE</a></li>
         </il>
     </header>
-    <div onclick="MeineFunktion('Plus');">
-        <a class="btn-floating btn-large waves-effect waves-light red btn" style="float: right;"><i class=" large material-icons">add_circle</i></a>
-    </div>
     <div>
-      <table class="striped">
+        <a style="float: right;"><i class="red new large material-icons">add_circle</i></a>
+    </div>
+    <div class="tableabstand">
+      <table>
         <thead>
           <tr>
               <th>ID</th>
@@ -50,7 +52,7 @@
             <td><div class="coloranzeige" style="background-color:#000000"></div>#000000</td>
             <td>Limousine</td>
             <td>0</td>
-            <td><i class="small material-icons blue">directions_car</i><i class="small material-icons green">create</i><i class="small material-icons red">delete</i></td>
+            <td><i class="tanken small material-icons blue">directions_car</i><i class="edit small material-icons green">create</i><i class="delete small material-icons red">delete</i></td>
           </tr>
           <tr>
             <td>2</td>
@@ -59,7 +61,7 @@
             <td><div class="coloranzeige" style="background-color:#008888"></div>#008888</td>
             <td>SUV</td>
             <td>0</td>
-            <td><i class="small material-icons blue">directions_car</i><i class="small material-icons green">create</i><i class="small material-icons red">delete</i></td>
+            <td><i class="tanken small material-icons blue">directions_car</i><i class="edit small material-icons green">create</i><i class="delete small material-icons red">delete</i></td>
           </tr>
           <tr>
             <td>3</td>
@@ -68,13 +70,22 @@
             <td><div class="coloranzeige" style="background-color:#006666"></div>#006666</td>
             <td>Pickup</td>
             <td>0</td>
-            <td><i class="small material-icons blue">directions_car</i><i class="small material-icons green">create</i><i class="small material-icons red">delete</i></td>
+            <td><i class="tanken small material-icons blue">directions_car</i><i class="edit small material-icons green">create</i><i class="delete small material-icons red">delete</i></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="formular">
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <h4 id="modat_titel">Modal Header</h4>
+          <p id="modat_inhalt">A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
     </div>
+
     <footer>© Alessio Ricci 2020</footer>
 </body>
 </html>

@@ -1,24 +1,18 @@
 header {
-    height: 40px;
+    height: 60px;
     background-color: orange;
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    font-size: 35px;
 }
 
 .black {
-    color: black;
-}
-
-.blue {
-    color: blue;
-}
-
-.red {
-    color: red;
+    color: gray;
 }
 
 a {
     text-decoration: none;
 }
+
