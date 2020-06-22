@@ -4,7 +4,9 @@ $(function(){
 
     $('.edit').click(function (e) { 
         e.preventDefault();
-        $('#modat_titel').html('Auto editieren von');
+        var id = $(this).parent().attr('data-id');
+        $('.modal').modal();
+        $('#modat_titel').html('Auto editieren von ' + id);
         $('#modat_inhalt').load('/auto/sites/formular.html');
         var mymodal = M.Modal.getInstance($('.modal'));
         mymodal.open();
@@ -12,7 +14,9 @@ $(function(){
 
     $('.tanken').click(function (e) { 
         e.preventDefault();
-        $('#modat_titel').html('Auto tanken von');
+        var id = $(this).parent().attr('data-id');
+        $('.modal').modal();
+        $('#modat_titel').html('Auto tanken von ' + id);
         $('#modat_inhalt').load('/auto/sites/formular.html');
         var mymodal = M.Modal.getInstance($('.modal'));
         mymodal.open();
@@ -20,7 +24,9 @@ $(function(){
 
     $('.delete').click(function (e) { 
         e.preventDefault();
-        $('#modat_titel').html('Auto löschen von');
+        var id = $(this).parent().attr('data-id');
+        $('.modal').modal();
+        $('#modat_titel').html('Auto löschen von ' + id);
         $('#modat_inhalt').load('/auto/sites/formular.html');
         var mymodal = M.Modal.getInstance($('.modal'));
         mymodal.open();
