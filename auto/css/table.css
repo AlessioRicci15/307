@@ -27,6 +27,11 @@ tr:nth-child(even) {
   font-size: 35px !important;
 }
 
+.large {
+    font-size: 50px !important;
+    padding-right: 15px;
+  }
+
 .coloranzeige {
     height: 20px;
     width: 100px;
