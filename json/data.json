@@ -1,0 +1,42 @@
+{
+    "person": [
+        { 
+            "name":"John", 
+            "age":31, 
+            "city":"New York" 
+        },
+        { 
+            "name":"Frank", 
+            "age":52, 
+            "city":"Seatle" 
+        },
+        { 
+            "name":"Michael", 
+            "age":21, 
+            "city":"San Francisco" 
+        },
+        { 
+            "name":"Sandra", 
+            "age":25, 
+            "city":"San Diego" 
+        },
+        { 
+            "name":"Petra", 
+            "age":21, 
+            "city":"Frankfurt" 
+        },
+        { 
+            "name":"Niklas", 
+            "age":43, 
+            "city":"DC" 
+        }
+    ],
+    "error": [
+        {
+            "meldung": "Das ist ein FEHLER!!!"
+        },
+        {
+            "meldung": "DAS IST AUCH EIN fehler, aber nicht gleich geschrieben"
+        }
+    ]
+}

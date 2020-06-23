@@ -1,4 +1,8 @@
 header {
     height: 30px;
     background-color: antiquewhite;
+    padding-left: 15px;
+}
+nav{
+    padding-left: 15px;
 }

@@ -13,19 +13,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Name</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/css.php">
+    <script language="javascript" type="text/javascript" src="/js/index.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>ICT Modul 307 | Interaktive Webseite mit Formular erstellen</header>
-    <nav>
-        <a href="auto/sites/index.html"  target="_blank">Auto</a>
-    </nav>
+    <a href="auto/sites/index.html"  target="_blank">
+        <nav>
+            Auto
+        </nav>
+    </a>
     <div>
         <h1>Hey my name is Alessio!</h1>
-        <article>This is a article.</article>
+        <main></main>
+        <script id="myTemplate" type="x-tmpl-mustache">
+            {{#person}} 
+                <div>
+                    {{name}}
+                    <br>
+                    {{age}}
+                    <br>
+                    {{city}} 
+                    <br>
+                    <div class="btn edit">edit</div>
+                </div>
+                <hr>
+            {{/person}}
+        </script>
     </div>
+    <div class="row">
+        <div class="col s1 m6 l12 red">RED</div>
+        <div class="col s2 m6 l12 orange">ORANGE</div>
+        <div class="col s3 m6 l12 yellow">YELLOW</div>
+        <div class="col s4 m6 l12 green">GREEN</div>
+        <div class="col s5 m6 l12 blue">BLUE</div>
+        <div class="col s6 m6 l12 purple">PURPLE</div>
+        <div class="col s7 m6 l12 white">WHITE</div>
+        <div class="col s8 m6 l12 grey">GREY</div>
+        <div class="col s9 m6 l12 black">BLACK</div>
+        <div class="col s10 m6 l12 brown">BROWN</div>
+        <div class="col s11 m6 l12 cyan">CYAN</div>
+        <div class="col s12 m6 l12 lime">LIME</div>
+      </div>
     <footer>© Alessio Ricci 2020</footer>
 </body>
 </html>
