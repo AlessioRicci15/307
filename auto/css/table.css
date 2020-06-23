@@ -2,10 +2,6 @@ table {
     width: 100%;
 }
 
-div table {
-    padding: 15px;
-}
-
 th, td {
     text-align: left;
     padding: 16px;
@@ -51,4 +47,20 @@ tr:nth-child(even) {
 
 .tableabstand{
     margin: 15px;
+}
+
+table {
+    border-collapse: initial;
+    border:solid black 2px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+td, th {
+    border-radius: 0px;
+    border-top:solid black 1px;
+}
+
+th {
+    border-top: none;
 }

@@ -24,29 +24,29 @@
 </head>
 <body>
     <header>
-        <a style="color: black" href="/auto/sites/index.html">
-            <i class="large material-icons ">directions_car</i> Auto
-        </a>
-        <il style="list-style: none; float: right;">
-            <li>
-                <a target="blank" class="black" href="https://materializecss.com/">
-                    <i class="material-icons black">brightness_1</i>MATERIALIZE CSS
-                </a> 
-                <a class="blue" target="blank" href="https://geeklabs.com">
-                    <i class="material-icons blue">brightness_1</i>GEEKLAPS
-                </a> 
-                <a class="red" target="blank" href="https://ict-berufsbildung.info/">
-                    <i class="material-icons red">brightness_1</i>MOODLE 
-                </a>
-            </li>
-        </il>
+        <nav>
+            <div class="nav-wrapper">
+            <a href="/auto/sites/index.html" class="brand-logo">Auto</a>
+            <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="https://materializecss.com/">MATERIALIZE CSS</a></li>
+                <li><a href="https://geeklabs.com">GEEKLAPS</a></li>
+                <li><a href="https://ict-berufsbildung.info/">MOODLE</a></li>
+            </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="https://materializecss.com/">MATERIALIZE CSS</a></li>
+            <li><a href="https://geeklabs.com">GEEKLAPS</a></li>
+            <li><a href="https://ict-berufsbildung.info/">MOODLE</a></li>
+        </ul>
     </header>
     <div>
-        <a style="float: right;"><i class="red new large material-icons">add_circle</i></a>
+        <a style="float: right; color: red;"><i class="new large material-icons">add_circle</i></a>
     </div>
     <div class="tableabstand">
         <main>
-            <table>
+            <table id="autos">
                 <thead>
                   <tr>
                       <th>ID</th>
@@ -66,12 +66,12 @@
                 <tr>
                 <td>{{ID}}</td>
                 <td>{{Name}}</td>
-                <td>{{Karftstoff}}</td>
+                <td>{{Kraftstoff}}</td>
                 <td>
                     <div class="coloranzeige" style="background-color:{{Farbe}}"></div>{{Farbe}}
                 </td>
                 <td>{{Bauart}}</td>
-                <td>{{Tank}}</td>
+                <td class="tank">{{Tank}}</td>
                 <td data-id = "{{ID}}">
                     <i class="tanken small material-icons blue">directions_car</i>
                     <i class="edit small material-icons green">create</i>
@@ -83,12 +83,11 @@
     </div>
     <div id="modal" class="modal">
         <div class="modal-content">
-          <h4 id="modat_titel">Modal Header</h4>
-          <p id="modat_inhalt">A bunch of text</p>
+          <h4 id="modat_titel"></h4>
+          <p id="modat_inhalt"></p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a id="bestaetigen" class="modal-close waves-effect waves-green btn-flat">Bestätigen</a>
         </div>
     </div>
     <footer>© Alessio Ricci 2020</footer>

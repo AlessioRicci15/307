@@ -1,18 +1,4 @@
-header {
-    height: 60px;
-    background-color: orange;
-    padding: 5px;
-    padding-left: 15px;
+nav{
     padding-right: 15px;
-    margin-bottom: 5px;
-    font-size: 35px;
+    padding-left: 15px;
 }
-
-.black {
-    color: gray;
-}
-
-a {
-    text-decoration: none;
-}
-
