@@ -1,11 +1,12 @@
 
 $('select').formSelect();
 $('#bestaetigen').click(function () {
+    
     var name = $('#name').val();
     var kraftstoff = document.querySelector('input[name="kraftstoff"]:checked').value;
     var farbe = $('#farbe').val();
     var bauart = $('#bauart').val();
-    var id = "FRANCA IST DOFF";
+    var id = "0";
 
     switch (kraftstoff) {
         case 'b':

@@ -2,11 +2,8 @@ $(function(){
     $(document).ready(function(){
         $('.sidenav').sidenav();
       });
-
-      
-
-    $.getJSON("/auto/data/auto.json", function (data) {
-        newAuto(data) 
+    $.getJSON("/auto/data/auto.php", function (data) {debugger;
+        newAuto(data); 
     });
 });
 
