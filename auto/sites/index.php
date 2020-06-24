@@ -1,3 +1,28 @@
+<?php
+    $servername = "localhost";
+    $username = "aless";
+    $password = "123456789";
+    $dbname = "auto";
+
+    $con = new mysqli($servername, $username, $password, $dbname);
+
+    if($con->connect_errno) {
+        $createdb = "CREATE DATABASE IF NOT EXISTS " . MSQL_DB . "DEFAULT CHARACTER SET utf8";
+        $con->query($createdb);
+    
+        $con->select_db(MSQL_DB);
+    
+        $createtable = "CREATE TABLE IF NOT EXISTS autos (
+          ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+          Name VARCHAR(255) NOT NULL,
+          Kraftstoff VARCHAR(255) NOT NULL,
+          Farbe VARCHAR(7) NOT NULL,
+          Tank INTEGER NOT NULL DEFAULT 0)";
+    
+          $con->query($createtable);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -72,10 +97,10 @@
                 </td>
                 <td>{{Bauart}}</td>
                 <td class="tank">{{Tank}}</td>
-                <td data-id = "{{ID}}">
-                    <i class="tanken small material-icons blue">directions_car</i>
-                    <i class="edit small material-icons green">create</i>
-                    <i class="delete small material-icons red">delete</i>
+                <td data-id = "{{ID}}" data-Name = "{{Name}}" data-Kraftstoff = "{{Kraftstoff}}" data-Farbe = "{{Farbe}}" data-Bauart = "{{Bauart}}">
+                        <i class="tanken small material-icons blue">directions_car</i>
+                        <i class="edit small material-icons green">create</i>
+                        <i class="delete small material-icons red">delete</i>
                 </td>
                 </tr>
             {{/auto}}
@@ -86,10 +111,44 @@
           <h4 id="modat_titel"></h4>
           <p id="modat_inhalt"></p>
         </div>
-        <div class="modal-footer">
-            <a id="bestaetigen" class="modal-close waves-effect waves-green btn-flat">Bestätigen</a>
-        </div>
     </div>
     <footer>© Alessio Ricci 2020</footer>
 </body>
 </html>
+
+<?php
+if(isset($_POST["name"])&&isset($_POST["kraftstoff"])&&isset($_POST["farbe"])&&isset($_POST["bauart"])){
+    $con = new mysqli($servername, $username, $password, $dbname);
+    $name = $_POST["name"];
+    $kraftstoff = $_POST["kraftstoff"];
+
+    switch ($kraftstoff) {
+        case 'b':
+            $kraftstoff ="Benzin";
+        break;
+        case 'd':
+            $kraftstoff = "Diesel";
+        break;
+        case 'e':
+            $kraftstoff = "Elektro";
+        break;
+        case 'w':
+            $kraftstoff = "Wasserstoff";
+        break;
+        };
+
+    $farbe = $_POST["farbe"];
+    $bauart = $_POST["bauart"];
+    $sql    = "INSERT INTO auto (Name, Kraftstoff, Farbe, Bauart) VALUES ('$name', '$kraftstoff', '$farbe', '$bauart')"; 
+    $con->query($sql); 
+    $con->close();
+}
+
+$action = 'getData';
+$id = '0';
+//wyh doens't it work
+if(isset($_GET['action'])) $action = $_GET['action'];
+if(isset($_GET['id'])) $id = $_GET['id'];
+
+echo $action . $id;
+?>

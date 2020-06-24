@@ -1,28 +1,28 @@
-<form method="POST" action="">
+<form method="POST" action="/auto/sites/index.php">
     <div class="input-field">
-    <input id="name" type="text" class="validate">
+    <input id="name" name="name" type="text" class="validate">
     <label for="name">Name</label>
 </div>
 <div>
     <label>Kraftstoff</label>
     <br>
     <label>
-        <input name="kraftstoff" value="d" type="radio"/>
+        <input class="kraftstoff" name="kraftstoff" value="d" type="radio"/>
         <span>Diesel</span>
     </label>
     <br>
     <label>
-        <input name="kraftstoff" value="b" type="radio"/>
+        <input class="kraftstoff" name="kraftstoff" value="b" type="radio"/>
         <span>Benzin</span>
     </label>
     <br>
     <label>
-        <input name="kraftstoff" value="e" type="radio"/>
+        <input class="kraftstoff" name="kraftstoff" value="e" type="radio"/>
         <span>Elektro</span>
     </label>
     <br>
     <label>
-        <input name="kraftstoff" value="w" type="radio"/>
+        <input class="kraftstoff" name="kraftstoff" value="w" type="radio"/>
         <span>Wasserstoff</span>
     </label>
 </div>
@@ -45,7 +45,10 @@
     </div>   
   </div>
 </div>
+<div>
+    <input type="submit" value="Bestätigen">
+</div>
 </form>
 <script>
-    $.getScript("/auto/js/formular.js");
+    $('select').formSelect();
 </script>

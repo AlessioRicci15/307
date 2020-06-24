@@ -4,8 +4,7 @@ $css = array(
     'footer.css',
     'header.css',
     'body.css',
-    'table.css',
-    'modal.css'
+    'table.css'
 );
 $css_content = '';
 foreach ($css as $css_file) {

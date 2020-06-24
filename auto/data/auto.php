@@ -1,6 +1,4 @@
-{
-    "auto":
-    <?php
+<?php
     $servername = "localhost";
     $username = "aless";
     $password = "123456789";
@@ -23,7 +21,11 @@
     
           $con->query($createtable);
     }
+?>
 
+{
+    "auto":
+<?php
     $res = $con->query("SELECT `auto`.* FROM `auto`");
     $results = $res->fetch_all(MYSQLI_ASSOC);
     echo json_encode($results);
