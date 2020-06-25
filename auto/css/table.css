@@ -1,22 +1,23 @@
 table {
-    width: 100%;
+  width: 100%;
 }
 
-th, td {
-    text-align: left;
-    padding: 16px;
+th,
+td {
+  text-align: left;
+  padding: 16px;
 }
 
 th {
-    background-color: tomato;
+  background-color: darkcyan;
 }
 
 tr {
-    background-color: lightcoral;
+  background-color: lightblue;
 }
 
 tr:nth-child(even) {
-    background-color: coral;
+  background-color: lightcyan;
 }
 
 .material-icons {
@@ -24,43 +25,44 @@ tr:nth-child(even) {
 }
 
 .large {
-    font-size: 50px !important;
-    padding-right: 15px;
-  }
+  font-size: 50px !important;
+  padding-right: 15px;
+}
 
 .coloranzeige {
-    height: 20px;
-    width: 100px;
+  height: 20px;
+  width: 100px;
 }
 
 .blue {
-    color: blue;
+  color: darkblue;
 }
 
 .green {
-    color: green;
+  color: darkgreen;
 }
 
 .red {
-    color: #c40000;
+  color: darkred;
 }
 
-.tableabstand{
-    margin: 15px;
+.tableabstand {
+  margin: 15px;
 }
 
 table {
-    border-collapse: initial;
-    border:solid black 2px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
+  border-collapse: initial;
+  border: solid black 2px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
 }
 
-td, th {
-    border-radius: 0px;
-    border-top:solid black 1px;
+td,
+th {
+  border-radius: 0px;
+  border-top: solid black 1px;
 }
 
 th {
-    border-top: none;
+  border-top: none;
 }

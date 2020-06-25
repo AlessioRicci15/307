@@ -6,29 +6,29 @@
 
     $con = new mysqli($servername, $username, $password, $dbname);
 
-    if($con->connect_errno) {
-        $createdb = "CREATE DATABASE IF NOT EXISTS " . MSQL_DB . "DEFAULT CHARACTER SET utf8";
+    if ($con->connect_errno) {
+        $createdb = "CREATE DATABASE IF NOT EXISTS " . $dbname . "DEFAULT CHARACTER SET utf8";
         $con->query($createdb);
-    
-        $con->select_db(MSQL_DB);
-    
+
+        $con->select_db($dbname);
+
         $createtable = "CREATE TABLE IF NOT EXISTS autos (
-          ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-          Name VARCHAR(255) NOT NULL,
-          Kraftstoff VARCHAR(255) NOT NULL,
-          Farbe VARCHAR(7) NOT NULL,
-          Tank INTEGER NOT NULL DEFAULT 0)";
-    
-          $con->query($createtable);
+            ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            Name VARCHAR(255) NOT NULL,
+            Kraftstoff VARCHAR(255) NOT NULL,
+            Farbe VARCHAR(7) NOT NULL,
+            Tank INTEGER NOT NULL DEFAULT 0)";
+
+        $con->query($createtable);
     }
 ?>
 
 {
     "auto":
-<?php
-    $res = $con->query("SELECT `auto`.* FROM `auto`");
-    $results = $res->fetch_all(MYSQLI_ASSOC);
-    echo json_encode($results);
-    $con->close();
-?>
+        <?php
+            $res = $con->query("SELECT `auto`.* FROM `auto`");
+            $results = $res->fetch_all(MYSQLI_ASSOC);
+            echo json_encode($results);
+            $con->close();
+        ?>
 }
