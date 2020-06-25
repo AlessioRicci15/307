@@ -1,10 +1,10 @@
+/* Footer formatieren */
 footer {
-  height: 20px;
+  height: 25px;
   background-color: black;
   text-align: center;
   color: white;
+  bottom: -1px;
+  left: 0px;
   width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
 }

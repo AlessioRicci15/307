@@ -1,9 +1,12 @@
+<!-- Method Post and action of formular -->
 <form method="POST" action="index.php">
+    <!-- Text -->
     <div class="input-field">
         <input id="name" name="name" type="text" class="validate">
         <label for="name">Name</label>
     </div>
     <div>
+        <!-- Radio -->
         <label>Kraftstoff</label>
         <br>
         <label>
@@ -27,11 +30,13 @@
         </label>
     </div>
     <div>
+        <!-- Colorpicker -->
         <label>Farbe</label>
         <br>
         <input type="color" name="farbe" id="farbe">
     </div>
     <div>
+        <!-- Select -->
         <label>Bauart</label>
         <br>
         <div>
@@ -45,8 +50,10 @@
         </div>
     </div>
     </div>
-    <button type="submit">Bestätigen</button>
+    <!-- Submit -->
+    <button style="float: right;" class="btn" type="submit">Bestätigen</button>
 </form>
 <script>
+    /* Refresh select */
     $('select').formSelect();
 </script>
