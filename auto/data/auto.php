@@ -29,7 +29,6 @@
     $res = $con->query("SELECT `auto`.* FROM `auto`");
     $results = $res->fetch_all(MYSQLI_ASSOC);
     echo json_encode($results);
-
     $con->close();
 ?>
 }

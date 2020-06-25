@@ -117,38 +117,86 @@
 </html>
 
 <?php
-if(isset($_POST["name"])&&isset($_POST["kraftstoff"])&&isset($_POST["farbe"])&&isset($_POST["bauart"])){
-    $con = new mysqli($servername, $username, $password, $dbname);
-    $name = $_POST["name"];
-    $kraftstoff = $_POST["kraftstoff"];
 
-    switch ($kraftstoff) {
-        case 'b':
-            $kraftstoff ="Benzin";
-        break;
-        case 'd':
-            $kraftstoff = "Diesel";
-        break;
-        case 'e':
-            $kraftstoff = "Elektro";
-        break;
-        case 'w':
-            $kraftstoff = "Wasserstoff";
-        break;
-        };
+$action = '';
 
-    $farbe = $_POST["farbe"];
-    $bauart = $_POST["bauart"];
-    $sql    = "INSERT INTO auto (Name, Kraftstoff, Farbe, Bauart) VALUES ('$name', '$kraftstoff', '$farbe', '$bauart')"; 
-    $con->query($sql); 
-    $con->close();
-}
-
-$action = 'getData';
-$id = '0';
-//wyh doens't it work
 if(isset($_GET['action'])) $action = $_GET['action'];
 if(isset($_GET['id'])) $id = $_GET['id'];
+if(isset($_GET['tank'])) $tank = $_GET['tank'];
 
-echo $action . $id;
+switch($action){
+    case 'delet':
+        $con = new mysqli($servername, $username, $password, $dbname);
+        $sql = "DELETE FROM `auto` WHERE `ID` = $id";
+        $con->query($sql); 
+        $con->close();
+        break;
+    case 'creat':
+        if(isset($_POST["name"])&&isset($_POST["kraftstoff"])&&isset($_POST["farbe"])&&isset($_POST["bauart"])){
+            $con = new mysqli($servername, $username, $password, $dbname);
+            $name = $_POST["name"];
+            $kraftstoff = $_POST["kraftstoff"];
+        
+            switch ($kraftstoff) {
+                case 'b':
+                    $kraftstoff ="Benzin";
+                break;
+                case 'd':
+                    $kraftstoff = "Diesel";
+                break;
+                case 'e':
+                    $kraftstoff = "Elektro";
+                break;
+                case 'w':
+                    $kraftstoff = "Wasserstoff";
+                break;
+                };
+        
+            $farbe = $_POST["farbe"];
+            $bauart = $_POST["bauart"];
+            $sql = "INSERT INTO `auto`(`Name`, `Kraftstoff`, `Farbe`, `Bauart`) VALUES ('$name', '$kraftstoff', '$farbe', '$bauart')"; 
+            $con->query($sql); 
+            $con->close();
+        }
+        break;
+    case 'edit':
+        if(isset($_POST["name"])&&isset($_POST["kraftstoff"])&&isset($_POST["farbe"])&&isset($_POST["bauart"])){
+            $con = new mysqli($servername, $username, $password, $dbname);
+            $name = $_POST["name"];
+            $kraftstoff = $_POST["kraftstoff"];
+        
+            switch ($kraftstoff) {
+                case 'b':
+                    $kraftstoff ="Benzin";
+                break;
+                case 'd':
+                    $kraftstoff = "Diesel";
+                break;
+                case 'e':
+                    $kraftstoff = "Elektro";
+                break;
+                case 'w':
+                    $kraftstoff = "Wasserstoff";
+                break;
+                };
+        
+            $farbe = $_POST["farbe"];
+            $bauart = $_POST["bauart"];
+            
+            $sql = "UPDATE `auto` SET `Name`= '$name',`Kraftstoff`='$kraftstoff',`Farbe`='$farbe',`Bauart`='$bauart' WHERE `ID` = '$id'";
+            $con->query($sql); 
+            $con->close();
+        }
+        break;
+    case 'tanken':
+        $con = new mysqli($servername, $username, $password, $dbname);
+        $tank = $tank + 1;
+        $sql = "UPDATE `auto` SET `Tank`= $tank WHERE `ID` = $id";
+        $con->query($sql); 
+        $con->close();
+        break;
+    case '':
+    break;
+}
+
 ?>

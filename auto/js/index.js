@@ -25,13 +25,14 @@ function newAuto (data) {
         if(kraftstoff=='Diesel') kraftstoff ='d';
         if(kraftstoff=='Elektro') kraftstoff ='e';
         if(kraftstoff=='Wasserstoff') kraftstoff ='w';
-        $("form").attr('action', "/auto/sites/index.php?action=edit&id="+id);
         $('.modal').modal();
         $('#modat_titel').html('Auto editieren von ' + id);
-        $('#modat_inhalt').load('/auto/sites/formular.html', () => {
+        $('#modat_inhalt').load('/auto/sites/formular.html', function () {
+            $("form").attr('action', "index.php?action=edit&id="+id);
             $('#name').val(name);
             $('#farbe').val(farbe);
             $('#bauart').val(bauart);
+            $('select').formSelect();
             $("input:radio").each(function () {
                 if ($(this).val() == kraftstoff) {
                     $(this).attr('checked', 'checked');
@@ -46,21 +47,24 @@ function newAuto (data) {
     $('.tanken').click(function (e) { 
         e.preventDefault();
         var id = $(this).parent().attr('data-id');
-        $("form").attr('action', "/auto/sites/index.php?action=tanken&id="+id);
-        const tank = $($(this).parents()[1]).children(".tank");
+        var tank = $($(this).parents()[1]).children(".tank");
+        $.ajax({url: "index.php?action=tanken&id="+id+"&tank="+tank.html()});
         tank.html(1+parseInt(tank.html()));
     });
 
     $('.delete').click(function (e) { 
         e.preventDefault();
         var id = $(this).parent().attr('data-id');
-        $("form").attr('action', "/auto/sites/index.php?action=delet&id="+id);
+        $.ajax({url: "index.php?action=delet&id="+id});
+        $(this).parent().parent().remove();
     });
 
     $('.new').click(function (e) { 
         e.preventDefault();
         $('#modat_titel').html('Auto hinzufügen');
-        $('#modat_inhalt').load('/auto/sites/formular.html');
+        $('#modat_inhalt').load('/auto/sites/formular.html', function () {
+            $("form").attr('action', "index.php?action=creat");
+        });
         var mymodal = M.Modal.getInstance($('.modal'));
         mymodal.open();
     });
