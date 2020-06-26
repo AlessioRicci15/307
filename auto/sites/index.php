@@ -175,9 +175,22 @@
                 };
                 $farbe = $_POST["farbe"];
                 $bauart = $_POST["bauart"];
+
+                if(strlen($name) > 255) {
+                    $write = false;
+                }
+                else {
+                    $write = true;
+                }
+                if(preg_match("/<(.*)>/", $str)){
+                    $write = false;
+                }
+                
                 /* SQL */
                 $sql = "INSERT INTO `auto`(`Name`, `Kraftstoff`, `Farbe`, `Bauart`) VALUES ('$name', '$kraftstoff', '$farbe', '$bauart')";
-                $con->query($sql);
+                if($write){
+                    $con->query($sql); 
+                } 
                 /* Close */
                 $con->close();
             }

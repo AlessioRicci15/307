@@ -6,8 +6,7 @@
     <meta name="author" content="Alessio Ricci">
     <meta name="publisher" content="Alessio Ricci">
     <meta name="copyright" content="Alessio Ricci">
-    <meta name="description"
-        content="Das ist eine Webseite, welche gestaltet wurde für den Unterricht im ICT Modul 307.">
+    <meta name="description" content="Das ist eine Webseite, welche gestaltet wurde für den Unterricht im ICT Modul 307.">
     <meta name="keywords" content="ICT, Modul, 307, Interaktive, Webseite, mit, Formular, erstellen">
     <meta name="page-topic" content="Bildung">
     <meta name="page-type" content="Private Homepage">
@@ -45,13 +44,13 @@
         <h1>Hey my name is Alessio!</h1>
         <main></main>
         <script id="myTemplate" type="x-tmpl-mustache">
-            {{#person}} 
+            {{#person}}
                 <div>
                     {{name}}
                     <br>
                     {{age}}
                     <br>
-                    {{city}} 
+                    {{city}}
                     <br>
                     <div class="btn edit">edit</div>
                 </div>
@@ -76,8 +75,10 @@
     </div>
     <!-- Date -->
     <div class="red">
-        <form>
+        <form method="GET">
             <input type="text" class="datepicker">
+            <input type="number" id="numbers" onkeyup="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onkeydown="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;">
+            <button type="submit">Try</button>
         </form>
     </div>
     <!-- Footer -->
@@ -85,3 +86,26 @@
 </body>
 
 </html>
+
+<script>
+    $('#numbers').keyup(function() {
+        var wert = $('#numbers').val();
+        console.log(wert);
+        if (Number.isInteger(wert)) {
+            var wert = parseInt(wert);
+            $('#numbers').val(wert);
+        }
+        if (wert > 2147483647) {
+            $('#numbers').val(2147483647);
+            M.toast({
+                html: 'Wert zu gross'
+            });
+        }
+        if (wert < 0) {
+            $('#numbers').val(0);
+            M.toast({
+                html: 'Wert zu klein'
+            });
+        }
+    });
+</script>
